@@ -12,9 +12,8 @@ def get_length_audio(audio):
 	return float(length)
 
 
-def cutting_original_audio(audio, cut_dir):
+def cutting_original_audio(audio, cut_dir, split_size=60):
 	length = get_length_audio(audio)
-	split_size = 60
 	nums = round(length/split_size)
 
 	new_audio_file = []
@@ -73,7 +72,7 @@ def run():
 	os.mkdir(cut_dir)
 	os.mkdir(txt_dir)
 
-	audio_file = os.path.join(audio_dir, 'aud2.wav')
+	audio_file = os.path.join(audio_dir, 'lec1.wav')
 
 	new_audio_files = cutting_original_audio(audio_file, cut_dir)
 
